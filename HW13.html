@@ -15,8 +15,8 @@ function isPalindrome(num, counter = 0) {
     steps: counter
   }
 
-  if (num === 196) {
-    throw new TypeError('A Lychrel number, 196, cannot form a palindrome through the iterative process')
+  if (counter >= 50) {
+    throw new TypeError('Cannot form a palindrome through the iterative process without using too much memory')
   }
   
   if (+num === +reverseNumber) {
