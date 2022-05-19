@@ -8,18 +8,24 @@
 </head>
 <body>
   <script>
-    function isPalindrome(num, counter = 0) {
-    console.log('called ', counter, 'times');
-    const reverseNumber = String(num).split('').reverse().join('');
+function isPalindrome(num, counter = 0) {
+  const reverseNumber = String(num).split('').reverse().join('');
+  const obj = {
+    result: num,
+    steps: counter
+  }
 
-    
-    if (+num === +reverseNumber) {
-      return num;
-    }
-    console.log();
-    return isPalindrome(+num + +reverseNumber, counter + 1)
-    }
-  console.log('result', isPalindrome(96));  
+  if (num === 196) {
+    throw new TypeError('A Lychrel number, 196, cannot form a palindrome through the iterative process')
+  }
+  
+  if (+num === +reverseNumber) {
+    return obj;
+  }
+
+  return isPalindrome(+num + +reverseNumber, counter + 1);
+}
+ 
   </script>
 </body>
 </html>
